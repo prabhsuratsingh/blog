@@ -50,11 +50,13 @@ jobs:
           hugo-version: 'latest'
 
       - name: Build
-        run: hugo
+        run: |
+          cd prabhsuratsinghblog
+          hugo
       
       - name: Commit public submodule
         run: |
-          cd public
+          cd prabhsuratsinghblog/public
           git add .
           git commit -m "deploy" || echo "no changes"
           git push
