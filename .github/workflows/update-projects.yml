@@ -73,9 +73,9 @@ jobs:
             exit 1
           fi
 
-          git remote set-url origin https://${GH_DEPLOY}@github.com/prabhsuratsingh/prabhsuratsingh.github.io.git
+          git remote set-url origin https://x-access-token:${{ secrets.GH_DEPLOY }}@github.com/prabhsuratsingh/prabhsuratsingh.github.io.git
 
-          git push origin HEAD:master
+          git push origin master
 
 
 
