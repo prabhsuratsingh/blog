@@ -1,0 +1,32 @@
+[
+  {
+    "name": "NeuroFold",
+    "description": "AI-powered platform to predict potential drug candidates for target proteins, powered by PyTorch, FastAPI, and Gemini.",
+    "url": "https://github.com/prabhsuratsingh/NeuroFold"
+  },
+  {
+    "name": "Proteios-Mini",
+    "description": "Proteios is an innovative platform designed to simplify and enhance protein research and drug discovery. It integrates cutting-edge Google AI and ML technologies to provide efficient protein analysis and comparison.",
+    "url": "https://github.com/prabhsuratsingh/Proteios-Mini"
+  },
+  {
+    "name": "SummitAI",
+    "description": "AI that helps you \u201csummit\u201d your meetings with clarity.",
+    "url": "https://github.com/prabhsuratsingh/SummitAI"
+  },
+  {
+    "name": "RealTime-Analytics-Platform",
+    "description": "A production-style real-time analytics system built with Python, Kafka, Redis, TimescaleDB, ClickHouse, FastAPI, Prometheus, Grafana, and a React + TypeScript frontend.",
+    "url": "https://github.com/prabhsuratsingh/RealTime-Analytics-Platform"
+  },
+  {
+    "name": "Runique",
+    "description": "Runique is a modern, offline-first, multi-module Android application designed for tracking running activities. This project showcases modern Android development practices, emphasizing a clean, scalable, and maintainable architecture.",
+    "url": "https://github.com/prabhsuratsingh/Runique"
+  },
+  {
+    "name": "PokeBot",
+    "description": "The ultimate Pok\u00e9mon bot you need for your discord server.",
+    "url": "https://github.com/prabhsuratsingh/PokeBot"
+  }
+]
