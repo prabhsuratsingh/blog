@@ -35,7 +35,7 @@ for repo in data["data"]["user"]["pinnedItems"]["nodes"]:
 
 os.makedirs("data", exist_ok=True)
 
-with open("data/projects.json", "w") as f:
+with open("prabhsuratsinghblog/data/projects.json", "w") as f:
     json.dump(projects, f, indent=2)
 
 print("updated /data/projects.json ✅")
