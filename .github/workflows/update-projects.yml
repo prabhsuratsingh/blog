@@ -68,13 +68,6 @@ jobs:
           git add .
           git commit -m "deploy" || echo "no changes"
 
-          if [ -z "$GH_DEPLOY" ]; then
-            echo "❌ GH_DEPLOY is missing!"
-            exit 1
-          fi
-
-          git remote set-url origin https://x-access-token:${{ secrets.GH_DEPLOY }}@github.com/prabhsuratsingh/prabhsuratsingh.github.io.git
-
           git push origin master
 
 
