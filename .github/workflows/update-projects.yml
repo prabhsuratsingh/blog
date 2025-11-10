@@ -1,9 +1,13 @@
-name: Update Projects Data Weekly
+name: Update Projects Data 
 
 on:
+  push:
+    branches:
+      - main
+      - master   # if your primary branch is master
   schedule:
     - cron: "0 0 * * 0"   # every sunday 00:00 UTC
-  workflow_dispatch:      # allow manual run as well
+  workflow_dispatch:      # allow manual run
 
 jobs:
   update-projects:
@@ -11,6 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true   # IMPORTANT because you need public/ submodule pulled
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -26,12 +32,12 @@ jobs:
         run: |
           python scripts/update_pinned_projects.py
 
-      - name: Commit & push
+      - name: Commit & push data
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add data/projects.json
-          git commit -m "update pinned projects"
+          git commit -m "update pinned projects" || echo "no changes"
           git push
 
       - name: Install Hugo
@@ -46,7 +52,5 @@ jobs:
         run: |
           cd public
           git add .
-          git commit -m "deploy"
+          git commit -m "deploy" || echo "no changes"
           git push
-
-
