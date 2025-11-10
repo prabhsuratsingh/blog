@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+
+<ul class="projects-list">
+  {{ range site.Data.projects }}
+    <li class="project">
+      <h2><a href="{{ .url }}" target="_blank">{{ .name }}</a></h2>
+      <p>{{ .description }}</p>
+    </li>
+  {{ end }}
+</ul>
+
+{{ end }}

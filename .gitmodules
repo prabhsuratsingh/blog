@@ -1,0 +1,7 @@
+[submodule "prabhsuratsinghblog/themes/smigle"]
+	path = prabhsuratsinghblog/themes/smigle
+	url = https://gitlab.com/ian-s-mcb/smigle-hugo-theme.git
+[submodule "prabhsuratsinghblog/public"]
+	path = prabhsuratsinghblog/public
+	url = git@github.com:prabhsuratsingh/prabhsuratsingh.github.io.git
+	branch = master

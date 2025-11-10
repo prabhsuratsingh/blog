@@ -1,0 +1,52 @@
+name: Update Projects Data Weekly
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"   # every sunday 00:00 UTC
+  workflow_dispatch:      # allow manual run as well
+
+jobs:
+  update-projects:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Generate projects.json
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        run: |
+          python scripts/update_pinned_projects.py
+
+      - name: Commit & push
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add data/projects.json
+          git commit -m "update pinned projects"
+          git push
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+
+      - name: Build
+        run: hugo -t smigle
+      
+      - name: Commit public submodule
+        run: |
+          cd public
+          git add .
+          git commit -m "deploy"
+          git push
+
+

@@ -1,0 +1,61 @@
+baseURL = 'https://prabhsuratsingh.github.io/'
+languageCode = 'en-us'
+title = "Prabhsurat's Blog"
+theme="smigle"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "rss"
+    name = "RSS"
+    url = "/index.xml"
+    weight = 5
+
+
+[params]
+  abbrDateFmt = "Jan 2"
+  author = "Prabhsurat Singh"
+  brandIconFile = "images/brandIcon.svg"
+  dateFmt = "2006-01-02"
+  subtitle = "Software Engineer | Android Native Developer"
+
+  customStylesheets = ["css/custom.css"]
+  #readingSpeed = 600
+  #readingSpeedMin = 25
+  #readingSpeedMax = 175
+
+  [[params.social]]
+    name = "GitHub"
+    url = "https://github.com/prabhsuratsingh"
+
+  [[params.social]]
+    name = "Linkedin"
+    url = "https://www.linkedin.com/in/prabhsurat-singh-1868052ab"
+
+  [[params.social]]
+    name = "Twitter"
+    url = "https://x.com/NeonEdge05"
