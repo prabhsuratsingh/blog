@@ -68,17 +68,8 @@ jobs:
           git checkout master
           git add .
           git commit -m "deploy" || echo "no changes"
-
-          # Ensure GH_DEPLOY is actually available
-          if [ -z "$GH_DEPLOY" ]; then
-            echo "❌ GH_DEPLOY secret not set or empty"
-            exit 1
-          fi
-
-          # Use double quotes and explicit HTTPS URL
           git remote set-url origin https://x-access-token:${GH_DEPLOY}@github.com/prabhsuratsingh/prabhsuratsingh.github.io.git
           git push origin master
-
 
 
 
