@@ -2,7 +2,7 @@ import json
 import os
 import requests
 
-TOKEN = os.environ["GH_TOKEN"]
+TOKEN = os.environ["GH_DEPLOY"]
 
 query = """
 {
