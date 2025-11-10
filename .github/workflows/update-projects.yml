@@ -41,12 +41,16 @@ jobs:
           python prabhsuratsinghblog/scripts/update_pinned_projects.py
 
       - name: Commit & push data
+        env:
+          GH_DEPLOY: ${{ secrets.GH_DEPLOY }}
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
+          git remote set-url origin https://x-access-token:${GH_DEPLOY}@github.com/prabhsuratsingh/prabhsuratsingh.github.io.git
           git add data/projects.json
           git commit -m "update pinned projects" || echo "no changes"
-          git push
+          git push origin HEAD:master
+
 
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v3
@@ -63,8 +67,8 @@ jobs:
         env:
           GH_DEPLOY: ${{ secrets.GH_DEPLOY }}
         run: |
-          git config user.email github-actions@noreply.github.com
-          git config user.name github-actions
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
           git checkout master
           git add .
           git commit -m "deploy" || echo "no changes"
