@@ -11,6 +11,7 @@ on:
 permissions:
   contents: write
   pages: write
+  repository-projects: write
 
 jobs:
   update-projects: 
