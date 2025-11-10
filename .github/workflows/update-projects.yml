@@ -30,7 +30,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         run: |
-          python scripts/update_pinned_projects.py
+          python blog/prabhsuratsinghblog/scripts/update_pinned_projects.py
 
       - name: Commit & push data
         run: |
