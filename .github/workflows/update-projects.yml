@@ -56,14 +56,15 @@ jobs:
       
       - name: Commit public submodule
         working-directory: prabhsuratsinghblog/public
+        env:
+          GH_DEPLOY: ${{ secrets.GH_DEPLOY }}
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          
-          # make sure we are on the correct branch (GH Pages for profile repo is master/main usually)
-          git checkout master || git checkout main
-
+          git checkout master
+          git remote set-url origin https://x-access-token:${GH_DEPLOY}@github.com/prabhsuratsingh/prabhsuratsingh.github.io.git
           git add .
           git commit -m "deploy" || echo "no changes"
           git push
+
 
