@@ -2,6 +2,7 @@ name: Update Projects Data
 
 permissions:
   contents: write
+  pages: write
 
 
 on:
