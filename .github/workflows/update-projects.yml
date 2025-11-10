@@ -68,8 +68,17 @@ jobs:
           git checkout master
           git add .
           git commit -m "deploy" || echo "no changes"
-          git remote set-url origin https://x-access-token:${GH_DEPLOY}@github.com/prabhsuratsingh/prabhsuratsingh.github.io.git
+
+          if [ -z "$GH_DEPLOY" ]; then
+            echo "❌ GH_DEPLOY is missing!"
+            exit 1
+          fi
+
+          git remote remove origin
+          git remote add origin https://x-access-token:${GH_DEPLOY}@github.com/prabhsuratsingh/prabhsuratsingh.github.io.git
+
           git push origin master
+
 
 
 
