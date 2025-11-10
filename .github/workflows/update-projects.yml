@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true   # IMPORTANT because you need public/ submodule pulled
+          submodules: recursive  
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -50,7 +50,7 @@ jobs:
           hugo-version: 'latest'
 
       - name: Build
-        run: hugo -t smigle
+        run: hugo
       
       - name: Commit public submodule
         run: |
