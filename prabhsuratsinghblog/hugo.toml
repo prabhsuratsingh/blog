@@ -39,7 +39,7 @@ theme="smigle"
 [params]
   abbrDateFmt = "Jan 2"
   author = "Prabhsurat Singh"
-  brandIconFile = "images/brandIcon.svg"
+  brandIconFile = "images/brand-icon.svg"
   dateFmt = "2006-01-02"
   subtitle = "Software Engineer | Android Native Developer"
 
